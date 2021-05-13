@@ -17,7 +17,7 @@ public class PaymentController {
 		{ 
 			Class.forName("com.mysql.jdbc.Driver"); 
  
-			//Provide the correct details: DBServer/DBName, username, password 
+			//Provide the correct database details: DBServer/DBName, username, password 
 			con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/pafprojtest?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC","root",""); 
 		} 
 		catch (Exception e) 
@@ -101,6 +101,7 @@ public class PaymentController {
 	+ "class='btnRemove btn btn-danger' data-payid='" + payid + "'></td></tr>"; 
 	 } 
 	 con.close(); 
+	 
 	 // Complete the html table
 	 output += "</table>"; 
 	 } 
@@ -123,7 +124,7 @@ public class PaymentController {
 			 { 
 			 return "Error while connecting to the database for updating."; 
 			 } 
-			 // create a prepared statement
+			 // Create the prepared statement
 			 String query = "UPDATE payment SET paydate=?,description=?,price=?,type=? WHERE payid=?"; 
 			 
 			 PreparedStatement preparedStmt = con.prepareStatement(query); 
@@ -158,12 +159,14 @@ public class PaymentController {
 	 { 
 	 return "Error while connecting to the database for deleting."; 
 	 } 
-	 // create a prepared statement
+	 // Create a prepared statement
 	 String query = "delete from payment where payid=?"; 
 	 PreparedStatement preparedStmt = con.prepareStatement(query); 
-	 // binding values
-	 preparedStmt.setInt(1, Integer.parseInt(payid)); 
-	 // execute the statement
+	 
+	 // Binding values
+	 preparedStmt.setInt(1, Integer.parseInt(payid));  
+	 
+	 //  Execute the statement
 	 preparedStmt.execute(); 
 	 con.close(); 
 	 String newItems = readPayment(); 

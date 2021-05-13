@@ -8,7 +8,7 @@ if ($("#alertSuccess").text().trim() == "")
 }); 
 
 
-// SAVE ============================================
+// SAVE ===========================
 $(document).on("click", "#btnSave", function(event) 
 { 
 // Clear alerts---------------------
@@ -16,7 +16,7 @@ $(document).on("click", "#btnSave", function(event)
  $("#alertSuccess").hide(); 
  $("#alertError").text(""); 
  $("#alertError").hide(); 
-// Form validation-------------------
+// Form validation-------------
 var status = validateItemForm(); 
 
 if (status != true) 
@@ -25,7 +25,7 @@ if (status != true)
  $("#alertError").show(); 
  return; 
  } 
-// If valid------------------------
+// If valid------------------
 var type = ($("#hidItemIDSave").val() == "") ? "POST" : "PUT"; 
 $.ajax( 
 { 
@@ -39,7 +39,7 @@ onItemSaveComplete(response.responseText, status);
 } 
 }); 
 }); 
-// UPDATE==========================================
+// UPDATE===========================
 $(document).on("click", ".btnUpdate", function(event) 
 { 
 	$("#hidItemIDSave").val($(this).data("payid")); 
@@ -66,7 +66,7 @@ $(document).on("click", ".btnRemove", function(event)
 		});
 
 
-//CLIENT-MODEL================================================================
+//CLIENT-MODEL===========================
 function validateItemForm() 
 { 
 // DAte
@@ -79,7 +79,7 @@ if ($("#description").val().trim() == "")
  { 
  return "Insert Item Name."; 
  } 
-//Price-------------------------------
+//Price----------------------------
 if ($("#price").val().trim() == "") 
  { 
  return "Insert Item Price."; 
@@ -92,7 +92,7 @@ if (!$.isNumeric(tmpPrice))
  } 
 //  convert to decimal price
  $("#price").val(parseFloat(tmpPrice).toFixed(2)); 
-// Payment Type------------------------
+// Payment Type--------------------
 if ($("#type").val().trim() == "") 
  { 
  return "Insert Item Description."; 

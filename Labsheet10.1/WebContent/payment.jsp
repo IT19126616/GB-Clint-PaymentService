@@ -12,8 +12,8 @@
 </head>
 <body>
 <div class="container"><div class="row"><div class="col-6"> 
-<h1>Payment Management</h1>
-<form id="formPay" name="formPay">
+<h1>Payment Management</h1><!-- Header -->
+<form id="formPay" name="formPay"><!-- Form of the payment -->
  Payment Date: 
  <input id="paydate" name="paydate" type="text" 
  class="form-control form-control-sm">
