@@ -69,30 +69,30 @@ $(document).on("click", ".btnRemove", function(event)
 //CLIENT-MODEL================================================================
 function validateItemForm() 
 { 
-// CODE
+// DAte
 if ($("#paydate").val().trim() == "") 
  { 
  return "Insert Item Code."; 
  } 
-// NAME
+// Description
 if ($("#description").val().trim() == "") 
  { 
  return "Insert Item Name."; 
  } 
-//PRICE-------------------------------
+//Price-------------------------------
 if ($("#price").val().trim() == "") 
  { 
  return "Insert Item Price."; 
  } 
-// is numerical value
+//  is numerical value
 var tmpPrice = $("#price").val().trim(); 
 if (!$.isNumeric(tmpPrice)) 
  { 
  return "Insert a numerical value for Item Price."; 
  } 
-// convert to decimal price
+//  convert to decimal price
  $("#price").val(parseFloat(tmpPrice).toFixed(2)); 
-// DESCRIPTION------------------------
+// Payment Type------------------------
 if ($("#type").val().trim() == "") 
  { 
  return "Insert Item Description."; 
