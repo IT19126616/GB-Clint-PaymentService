@@ -125,7 +125,7 @@ if (status == "success")
  $("#alertError").show(); 
  } 
 $("#hidItemIDSave").val(""); 
-$("#formItem")[0].reset(); 
+$("#formPay")[0].reset(); 
 }
 
 
